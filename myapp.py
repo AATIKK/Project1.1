@@ -31,3 +31,7 @@ else:
   else:
     st.warning("please upload a csv file or use example")
     st.stop()
+  #show data
+st.subheader("Dataset preview")
+st.write(df.head())
+ 
