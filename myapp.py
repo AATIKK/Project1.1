@@ -45,4 +45,5 @@ target = st.selectbox("select target variable",numeric_cols)
 features = st.multiselect("select input feature columns",[col for col in numeric_cols if col != target], default = [col for col in numeric_cols if col != target])
 
 # Keep all files; filter by choice.
-
+if len(features) == 0:
+  st.write("please select atleast one features")
