@@ -15,7 +15,7 @@ st.subheader("ML with me")
 #web application have example..
 # create sidebar
 st.sidebar.header("upload CSV data or use sample")
-use_example = st.sidebar.checkbox("Use example dataset")
+user_example = st.sidebar.checkbox("Use example dataset")
 #load dataset.......
 if user_example:
   df = sns.load_dataset('tips')
@@ -25,9 +25,9 @@ if user_example:
   
 
 else:
-  uploaded_file = st.sidebar.file_uploader("Upload your csv file",type['csv'])
+  uploaded_file = st.sidebar.file_uploader("Upload your csv file",type=["csv"])
   if uploaded_file:
     df = pd.read_csv(uploaded_file)
   else:
-    st.waning("please upload a csv file or use example")
+    st.warning("please upload a csv file or use example")
     st.stop()
