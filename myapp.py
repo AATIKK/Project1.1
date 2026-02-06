@@ -15,3 +15,4 @@ st.subheader("ML with me")
 #web application have example..
 # create sidebar
 st.sidebar.header("upload CSV data or use sample")
+use_example = st.sidebar.checkbox("Use example dataset")
