@@ -50,7 +50,7 @@ if len(features) == 0:
   st.write("please select atleast one features")
   st.stop()
 
-df[features + [[target]].dropna()
+df[features + [target]].dropna()
 
 x = df[features]
 y = df[target]
