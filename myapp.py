@@ -42,5 +42,7 @@ if len(numeric_cols) < 2:
   st.stop()
 
 target = st.selectbox("select target variable",numeric_cols)
-features = st.multiselect("select input feature columns",[col for col in numeric_cols if col != target])
+features = st.multiselect("select input feature columns",[col for col in numeric_cols if col != target], default = [col for col in numeric_cols if col != target])
+
+# Keep all files; filter by choice.
 
