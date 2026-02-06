@@ -36,7 +36,7 @@ st.subheader("Dataset preview")
 st.write(df.head())
 
 #EDA and model training
-numeric_cols = df.select_dtypes(include=np.number).columns.tolist():
+numeric_cols = df.select_dtypes(include=np.number).columns.tolist()
 if len(numeric_cols) < 2:
   st.error("nedd atleast two numeric columns for regression.")
   st.stop()
