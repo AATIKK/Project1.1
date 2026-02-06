@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-
+from sklearn.liner_model import LinerRegression
+from sklearn.metrics import mean_squared_error,r2_score
 # Streamlit UI
 st.title("Good to Go, buddy 🚀")
 st.subheader("ML with me")
@@ -47,3 +48,31 @@ features = st.multiselect("select input feature columns",[col for col in numeric
 # Keep all files; filter by choice.
 if len(features) == 0:
   st.write("please select atleast one features")
+  st.stop()
+
+df[features + [[target]].dropna()
+
+x = df[features]
+y = df[target]
+#transform//scaing--->> convert -1 to +1
+
+scaler =StandardScaler()
+X_scaled = scaler.fit_transform(X)
+X_train, X_test,y_train, y_test = train_test_split(X_scaled,y,test_size=0.2, random_state = 42)
+#train_test_split(X_scaled,y,test_sizee=0.2,random_state = 42)
+
+model = LinerRegression()
+model.fit(X_train,y_train)
+y_pred = model.predict(X_test)
+msc = mean_score(y_test, y_pred)
+
+st.subheader("Model Evaludation")
+st.write(f"Mean Sqaure Error: {mse:.2f}")
+st.write(f"R^2 Score: {r2:.2f}")
+
+
+
+
+
+
+        
